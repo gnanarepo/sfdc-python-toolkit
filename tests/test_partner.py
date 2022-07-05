@@ -52,12 +52,12 @@ class SforcePartnerClientTest(test_base.SforceBaseClientTest):
 
 
   def testSearchManyResults(self):
-    result = self.h.search(u'FIND {Joë Möke} IN Name Fields RETURNING Lead(Name, Phone, DoNotCall, Company)')
+    result = self.h.search('FIND {Joë Möke} IN Name Fields RETURNING Lead(Name, Phone, DoNotCall, Company)')
 
     self.assertTrue(len(result.searchRecords) > 1)
     for searchRecord in result.searchRecords:
-      self.assertEqual(searchRecord.record.Name, u'Joë Möke')
-      self.assertEqual(searchRecord.record.Company, u'你好公司')
+      self.assertEqual(searchRecord.record.Name, 'Joë Möke')
+      self.assertEqual(searchRecord.record.Company, '你好公司')
       self.assertTrue(searchRecord.record.DoNotCall in ('false', 'true'))
 
   def testUpdateOneFieldToNull(self):
@@ -73,9 +73,9 @@ class SforcePartnerClientTest(test_base.SforceBaseClientTest):
     self.assertEqual(result.id, lead.Id)
 
     result = self.h.retrieve('FirstName, LastName, Company, Email', 'Lead', (lead.Id))
-    self.assertEqual(result.FirstName, u'Joë')
-    self.assertEqual(result.LastName, u'Möke')
-    self.assertEqual(result.Company, u'你好公司')
+    self.assertEqual(result.FirstName, 'Joë')
+    self.assertEqual(result.LastName, 'Möke')
+    self.assertEqual(result.Company, '你好公司')
     self.assertEqual(result.Email, None)
 
   def testUpdateTwoFieldsToNull(self):
@@ -94,7 +94,7 @@ class SforcePartnerClientTest(test_base.SforceBaseClientTest):
     result = self.h.retrieve('FirstName, LastName, Company, Email', 'Lead', (lead.Id))
 
     self.assertEqual(result.FirstName, None)
-    self.assertEqual(result.LastName, u'Möke')
+    self.assertEqual(result.LastName, 'Möke')
     self.assertEqual(result.Email, None)
 
 if __name__ == '__main__':
