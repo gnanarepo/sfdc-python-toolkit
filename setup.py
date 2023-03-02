@@ -34,7 +34,7 @@ setup(
     url="http://code.google.com/p/salesforce-python-toolkit/",
     download_url="http://code.google.com/p/salesforce-python-toolkit/downloads/list",
     platforms=['any'],
-    install_requires=['suds==0.3.9'],
+    install_requires=['suds==1.1.2'],
 
     license="LGPL",
     packages=find_packages('.'),
