@@ -15,7 +15,7 @@
 # Written by: David Lanstein ( dlanstein gmail com )
 
 
-from base import SforceBaseClient
+from .base import SforceBaseClient
 
 import string
 import suds.sudsobject
