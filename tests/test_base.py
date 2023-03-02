@@ -148,9 +148,9 @@ class SforceBaseClientTest(unittest.TestCase):
 
   def createLead(self, returnLead = False):
     lead = self.h.generateObject('Lead')
-    lead.FirstName = u'Joë'
-    lead.LastName = u'Möke'
-    lead.Company = u'你好公司'
+    lead.FirstName = 'Joë'
+    lead.LastName = 'Möke'
+    lead.Company = '你好公司'
     lead.Email = 'joe@example.com'
 
     if returnLead:
@@ -162,15 +162,15 @@ class SforceBaseClientTest(unittest.TestCase):
 
   def createLeads(self, returnLeads = False):
     lead = self.h.generateObject('Lead')
-    lead.FirstName = u'Joë'
-    lead.LastName = u'Möke'
-    lead.Company = u'你好公司'
+    lead.FirstName = 'Joë'
+    lead.LastName = 'Möke'
+    lead.Company = '你好公司'
     lead.Email = 'joe@example.com'
 
     lead2 = self.h.generateObject('Lead')
-    lead2.FirstName = u'Böb'
-    lead2.LastName = u'Möke'
-    lead2.Company = u'你好公司'
+    lead2.FirstName = 'Böb'
+    lead2.LastName = 'Möke'
+    lead2.Company = '你好公司'
     lead2.Email = 'bob@example.com'
 
     if returnLeads:
@@ -790,9 +790,9 @@ class SforceBaseClientTest(unittest.TestCase):
     self.setHeaders('upsert')
 
     lead = self.h.generateObject('Lead')
-    lead.FirstName = u'Joë'
-    lead.LastName = u'Möke'
-    lead.Company = u'你好公司'
+    lead.FirstName = 'Joë'
+    lead.LastName = 'Möke'
+    lead.Company = '你好公司'
     lead.Email = 'joe@example.com'
     result = self.h.upsert('Id', lead)
 

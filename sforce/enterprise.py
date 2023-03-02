@@ -14,7 +14,7 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 # Written by: David Lanstein ( dlanstein gmail com )
 
-from base import SforceBaseClient
+from .base import SforceBaseClient
 
 import suds.sudsobject
 
